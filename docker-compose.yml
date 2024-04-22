@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16.2
+    container_name: postgres-simples-dental
+    environment:
+      POSTGRES_DB: 'simples_dental'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'FirstPassword'
+      POSTGRES_ROOT_PASSWORD: 'root'
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./src/main/resources/postgres/data:/var/lib/postgresql/data
+      - ./src/main/resources/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: ["postgres", "-c", "log_statement=all"]
+
+volumes:
+  postgres-data:

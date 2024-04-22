@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "c71432ff-9ad6-4a3f-8154-ffcc14ac582b",
+		"name": "Simples Dental",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20187976"
+	},
+	"item": [
+		{
+			"name": "Profissional",
+			"item": [
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": null,\r\n    \"nome\": \"Isadora Aline Maitê Brito\",\r\n    \"cargo\":\"Suporte\",\r\n    \"nascimento\":\"1946-02-24\",\r\n    \"contatos\":[\r\n        {\r\n            \"id\":null,\r\n            \"nome\":\"Residencial\",\r\n            \"contato\":\"2125249145\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/profissionais",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profissionais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profissionais",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profissionais"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Amanda",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "nome,created_date,  id, cargo",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profissionais/1aed91b6-6566-4217-bc5d-dcf6604557cb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profissionais",
+								"1aed91b6-6566-4217-bc5d-dcf6604557cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"e82e9570-8588-40ed-bcdc-db4f300478eb\",\r\n    \"nome\": \"Amanda Luiza Natália Aparício\",\r\n    \"cargo\": \"Designer\",\r\n    \"nascimento\": \"1979-02-11\",\r\n    \"created_date\": \"2024-04-19T20:41:55.274004Z\",\r\n    \"contatos\": [\r\n        {\r\n            \"id\": \"4050369c-d17f-4d69-a822-780a87e7e008\",\r\n            \"nome\": \"Escritório\",\r\n            \"contato\": \"9437424023\",\r\n            \"createdDate\": \"2024-04-19T20:41:55.275074Z\",\r\n            \"profissional\": null,\r\n            \"profissionalId\": \"e82e9570-8588-40ed-bcdc-db4f300478eb\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/profissionais/e82e9570-8588-40ed-bcdc-db4f300478eb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profissionais",
+								"e82e9570-8588-40ed-bcdc-db4f300478eb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profissionais/e82e9570-8588-40ed-bcdc-db4f300478eb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profissionais",
+								"e82e9570-8588-40ed-bcdc-db4f300478eb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contato",
+			"item": [
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":null,\r\n    \"nome\":\"Empresa\",\r\n    \"contato\":\"8237404691\",\r\n    \"profissional_id\":\"1aed91b6-6566-4217-bc5d-dcf6604557cb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/contatos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/contatos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contatos"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Empresa",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "nome,created_date,profissional_id",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/contatos/77bd22de-7e55-475a-a504-ab3c475f1384",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contatos",
+								"77bd22de-7e55-475a-a504-ab3c475f1384"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"77bd22de-7e55-475a-a504-ab3c475f1384\",\r\n    \"nome\": \"Empresa\",\r\n    \"contato\": \"8237404691\",\r\n    \"profissional_id\": \"1aed91b6-6566-4217-bc5d-dcf6604557cb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/contatos/77bd22de-7e55-475a-a504-ab3c475f1384",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contatos",
+								"77bd22de-7e55-475a-a504-ab3c475f1384"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/contatos/77bd22de-7e55-475a-a504-ab3c475f1384",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contatos",
+								"77bd22de-7e55-475a-a504-ab3c475f1384"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
